@@ -61,6 +61,7 @@
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
+            cursor: pointer;
         }
 
         .btn-primary { background: var(--primary); color: white; }
@@ -88,17 +89,32 @@
             gap: 30px;
         }
 
+        /* CARD STYLING */
         .card {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 20px;
+            position: relative; /* Allows for clickable overlay if needed */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .card:hover { border-color: var(--primary); transform: translateY(-10px); }
 
-        .card img { border-radius: 12px; margin-top: 15px; width: 100%; border: 1px solid rgba(255,255,255,0.1); }
+        .card img { border-radius: 12px; margin-top: auto; width: 100%; border: 1px solid rgba(255,255,255,0.1); }
+
+        .project-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .project-link:hover { text-decoration: underline; }
 
         .skills span {
             background: rgba(56, 189, 248, 0.1);
@@ -123,8 +139,8 @@
     
     <div class="cta-container">
         <a href="#projects" class="btn btn-primary">Explore Projects</a>
-        <!-- MATCHED TO YOUR FOLDER: Capital 'R' -->
-        <a href="Resume.pdf" target="_blank" download="Nithya_Shri_Resume" class="btn btn-outline">📥 Download CV</a>
+        <!-- Assuming Resume.pdf is in the same folder on GitHub -->
+        <a href="Resume.pdf" target="_blank" class="btn btn-outline">📥 Download CV</a>
     </div>
 </header>
 
@@ -140,23 +156,30 @@
     <h2>Featured Projects</h2>
     <div class="project-grid">
         
+        <!-- Project 1 -->
         <div class="card">
             <h3>🎟 Movie Ticket Booking</h3>
             <p>Solved concurrency handling using Django. Handled 50+ simultaneous users.</p>
+            <a href="https://github.com" target="_blank" class="project-link">View Repository & README →</a>
             <img src="project1.png" alt="Ticket System">
         </div>
 
+        <!-- Project 2 -->
         <div class="card">
             <h3>👨‍💼 ServiceNow Automation</h3>
             <p>Automated onboarding workflows, reducing manual effort by 90%.</p>
-            <!-- Make sure you upload project2.png to GitHub! -->
+            <a href="https://github.com" target="_blank" class="project-link">View Repository & README →</a>
             <img src="project2.png" alt="ServiceNow Automation">
         </div>
 
+        <!-- Project 3 -->
         <div class="card">
             <h3>🏦 Loan Prediction (ML)</h3>
             <p>Built ML model using Logistic Regression with full data cleaning pipeline.</p>
-            <a href="https://streamlit.app" target="_blank" style="color: var(--primary); font-weight:600; text-decoration:none;">View Live Demo →</a>
+            <div style="display: flex; gap: 15px;">
+                <a href="https://github.com" target="_blank" class="project-link">Code →</a>
+                <a href="https://streamlit.app" target="_blank" class="project-link">Live Demo →</a>
+            </div>
             <img src="project3.png" alt="ML Project">
         </div>
 
@@ -172,9 +195,9 @@
 
 <div class="section">
     <h2>Get In Touch</h2>
-    <p>📧 Email: <a href="mailto:gnithyashri25@gmail.com" style="color:var(--primary)">gnithyashri25@gmail.com</a></p>
-    <p>🔗 GitHub: <a href="https://github.com" target="_blank" style="color:var(--primary)">://github.com</a></p>
-    <p>💼 LinkedIn: <a href="https://linkedin.com" target="_blank" style="color:var(--primary)">://linkedin.com</a></p>
+    <p>📧 Email: <a href="mailto:gnithyashri25@gmail.com" style="color:var(--primary); text-decoration: none;">gnithyashri25@gmail.com</a></p>
+    <p>🔗 GitHub: <a href="https://github.com" target="_blank" style="color:var(--primary); text-decoration: none;">://github.com</a></p>
+    <p>💼 LinkedIn: <a href="https://linkedin.com" target="_blank" style="color:var(--primary); text-decoration: none;">://linkedin.com</a></p>
 </div>
 
 <footer>
