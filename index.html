@@ -1,157 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G Nithya Shri | Portfolio</title>
-    <link href="https://googleapis.com" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #06b6d4;
-            --secondary: #3b82f6;
-            --bg: #020617;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text: #f8fafc;
-        }
-
-        * { box-sizing: border-box; transition: all 0.3s ease; scroll-behavior: smooth; }
-
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at 20% 20%, #1e293b 0%, #020617 100%);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        header {
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        header h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin: 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            letter-spacing: -2px;
-        }
-
-        .cta-container { display: flex; gap: 15px; margin-top: 30px; }
-
-        .btn {
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--secondary); transform: scale(1.05); }
-
-        .btn-outline { 
-            background: transparent; 
-            color: var(--primary); 
-            border: 2px solid var(--primary); 
-        }
-        .btn-outline:hover { background: rgba(6, 182, 212, 0.1); transform: scale(1.05); }
-
-        .section { padding: 80px 20px; max-width: 1100px; margin: auto; animation: fadeInUp 1s ease-out; }
-
-        h2 {
-            font-size: 2.2rem;
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
-            margin-bottom: 30px;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        /* CARD STYLING */
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
-            position: relative; /* Allows for clickable overlay if needed */
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
-
-        .card img { border-radius: 12px; margin-top: auto; width: 100%; border: 1px solid rgba(255,255,255,0.1); }
-
-        .project-link {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .project-link:hover { text-decoration: underline; }
-
-        .skills span {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin: 6px;
-            display: inline-block;
-            font-weight: 600;
-        }
-
-        footer { text-align: center; padding: 60px; color: #64748b; border-top: 1px solid rgba(255,255,255,0.05); }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>G Nithya Shri</h1>
-    <p style="color: #94a3b8; font-size: 1.3rem;">ServiceNow Developer | Python Backend | ML Enthusiast</p>
-    
-    <div class="cta-container">
-        <a href="#projects" class="btn btn-primary">Explore Projects</a>
-        <!-- Assuming Resume.pdf is in the same folder on GitHub -->
-        <a href="Resume.pdf" target="_blank" class="btn btn-outline">📥 Download CV</a>
-    </div>
-</header>
-
-<div class="section" id="about">
-    <h2>About Me</h2>
-    <p style="font-size: 1.2rem; color: #cbd5e1;">
-        I am a <b>ServiceNow-certified developer</b> and software engineer. I build scalable systems including a seat-locking booking 
-        platform, automated onboarding workflows, and ML-based loan prediction systems.
-    </p>
-</div>
-
 <div class="section" id="projects">
     <h2>Featured Projects</h2>
     <div class="project-grid">
@@ -160,7 +6,7 @@
         <div class="card">
             <h3>🎟 Movie Ticket Booking</h3>
             <p>Solved concurrency handling using Django. Handled 50+ simultaneous users.</p>
-            <a href="https://github.com/gnithya-shri/Online-Movie-Ticket-Booking-Seat-Locking-System-" target="_blank" class="project-link">View Repository & README →</a>
+            <a href="https://github.com/gnithya-shri/Online-Movie-Ticket-Booking-Seat-Locking-System-" target="_blank" style="color: var(--primary); font-weight:600; text-decoration:none;">View Project →</a>
             <img src="project1.png" alt="Ticket System">
         </div>
 
@@ -168,7 +14,7 @@
         <div class="card">
             <h3>👨‍💼 ServiceNow Automation</h3>
             <p>Automated onboarding workflows, reducing manual effort by 90%.</p>
-            <a href="https://github.com/gnithya-shri/Employee-Onboarding-Automation" target="_blank" class="project-link">View Repository & README →</a>
+            <a href="https://github.com/gnithya-shri/Employee-Onboarding-Automation" target="_blank" style="color: var(--primary); font-weight:600; text-decoration:none;">View Project →</a>
             <img src="project2.png" alt="ServiceNow Automation">
         </div>
 
@@ -176,33 +22,9 @@
         <div class="card">
             <h3>🏦 Loan Prediction (ML)</h3>
             <p>Built ML model using Logistic Regression with full data cleaning pipeline.</p>
-            <div style="display: flex; gap: 15px;">
-                <a href="https://github.com/gnithya-shri/Loan-Eligibility-Prediction" target="_blank" class="project-link">Code →</a>
-                <a href="https://loan-eligibility-predication-bnywpxettqdezvpr7smohz.streamlit.app" target="_blank" class="project-link">Live Demo →</a>
-            </div>
+            <a href="https://github.com/gnithya-shri/Loan-Eligibility-Prediction" target="_blank" style="color: var(--primary); font-weight:600; text-decoration:none;">View Project →</a>
             <img src="project3.png" alt="ML Project">
         </div>
 
     </div>
 </div>
-
-<div class="section">
-    <h2>Technical Arsenal</h2>
-    <div class="skills">
-        <span>Python</span><span>Django</span><span>ServiceNow</span><span>Machine Learning</span><span>SQL</span><span>MongoDB</span><span>JavaScript</span>
-    </div>
-</div>
-
-<div class="section">
-    <h2>Get In Touch</h2>
-    <p>📧 Email: <a href="mailto:gnithyashri25@gmail.com" style="color:var(--primary); text-decoration: none;">gnithyashri25@gmail.com</a></p>
-    <p>🔗 GitHub: <a href="https://github.com" target="_blank" style="color:var(--primary); text-decoration: none;">://github.com</a></p>
-    <p>💼 LinkedIn: <a href="https://linkedin.com" target="_blank" style="color:var(--primary); text-decoration: none;">://linkedin.com</a></p>
-</div>
-
-<footer>
-    <p>© 2026 G Nithya Shri</p>
-</footer>
-
-</body>
-</html>
