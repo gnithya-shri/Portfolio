@@ -71,9 +71,18 @@
             color: var(--primary); 
             border: 2px solid var(--primary); 
         }
-        .btn-outline:hover { background: rgba(6, 182, 212, 0.1); transform: scale(1.05); }
 
-        .section { padding: 80px 20px; max-width: 1100px; margin: auto; animation: fadeInUp 1s ease-out; }
+        .btn-outline:hover { 
+            background: rgba(6, 182, 212, 0.1); 
+            transform: scale(1.05); 
+        }
+
+        .section { 
+            padding: 80px 20px; 
+            max-width: 1100px; 
+            margin: auto; 
+            animation: fadeInUp 1s ease-out; 
+        }
 
         h2 {
             font-size: 2.2rem;
@@ -96,9 +105,32 @@
             border-radius: 20px;
         }
 
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .card:hover { 
+            border-color: var(--primary); 
+            transform: translateY(-10px); 
+        }
 
-        .card img { border-radius: 12px; margin-top: 15px; width: 100%; border: 1px solid rgba(255,255,255,0.1); }
+        .card img { 
+            border-radius: 12px; 
+            margin-top: 15px; 
+            width: 100%; 
+            border: 1px solid rgba(255,255,255,0.1); 
+        }
+
+        .project-links {
+            margin-top: 12px;
+        }
+
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .project-links a:hover {
+            color: var(--secondary);
+        }
 
         .skills span {
             background: rgba(56, 189, 248, 0.1);
@@ -111,7 +143,12 @@
             font-weight: 600;
         }
 
-        footer { text-align: center; padding: 60px; color: #64748b; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer { 
+            text-align: center; 
+            padding: 60px; 
+            color: #64748b; 
+            border-top: 1px solid rgba(255,255,255,0.05); 
+        }
     </style>
 </head>
 
@@ -119,44 +156,93 @@
 
 <header>
     <h1>G Nithya Shri</h1>
-    <p style="color: #94a3b8; font-size: 1.3rem;">ServiceNow Developer | Python Backend | ML Enthusiast</p>
+    <p style="color: #94a3b8; font-size: 1.3rem;">
+        ServiceNow Certified | Python & Backend Enthusiast
+    </p>
     
     <div class="cta-container">
         <a href="#projects" class="btn btn-primary">Explore Projects</a>
-        <!-- MATCHED TO YOUR FOLDER: Capital 'R' -->
-        <a href="Resume.pdf" target="_blank" download="Nithya_Shri_Resume" class="btn btn-outline">📥 Download CV</a>
+        <a href="Resume.pdf" target="_blank" download="Nithya_Shri_Resume" class="btn btn-outline">
+            📥 Download CV
+        </a>
     </div>
 </header>
 
 <div class="section" id="about">
     <h2>About Me</h2>
     <p style="font-size: 1.2rem; color: #cbd5e1;">
-        I am a <b>ServiceNow-certified developer</b> and software engineer. I build scalable systems including a seat-locking booking 
-        platform, automated onboarding workflows, and ML-based loan prediction systems.
+        I am a ServiceNow-certified fresher passionate about backend development, workflow automation, and building practical software solutions. 
+        I enjoy creating scalable applications, automating workflows, and solving real-world problems through technology.
     </p>
 </div>
 
 <div class="section" id="projects">
     <h2>Featured Projects</h2>
+
     <div class="project-grid">
-        
+
+        <div class="card">
+            <h3>📌 Job Tracker AI</h3>
+
+            <p>
+                Developed a full-stack job tracking platform with application status monitoring, 
+                responsive UI components, and centralized job management workflows.
+            </p>
+
+            <p>
+                Built RESTful APIs and integrated a Resume Skill Match Analyzer to compare resumes 
+                with job descriptions and generate match percentage insights.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/gnithya-shri/job-tracker-ai" target="_blank">
+                    🔗 GitHub
+                </a>
+
+                <a href="https://lighthearted-trifle-4f2a93.netlify.app/" target="_blank">
+                    🚀 Live Demo
+                </a>
+            </div>
+
+            <img src="jobtracker.png" alt="Job Tracker AI">
+        </div>
+
         <div class="card">
             <h3>🎟 Movie Ticket Booking</h3>
-            <p>Solved concurrency handling using Django. Handled 50+ simultaneous users.</p>
+
+            <p>
+                Solved concurrency handling using Django. Managed simultaneous booking requests 
+                with backend transaction handling concepts.
+            </p>
+
             <img src="project1.png" alt="Ticket System">
         </div>
 
         <div class="card">
             <h3>👨‍💼 ServiceNow Automation</h3>
-            <p>Automated onboarding workflows, reducing manual effort by 90%.</p>
-            <!-- Make sure you upload project2.png to GitHub! -->
+
+            <p>
+                Automated onboarding workflows using ServiceNow, reducing manual effort 
+                and improving process efficiency.
+            </p>
+
             <img src="project2.png" alt="ServiceNow Automation">
         </div>
 
         <div class="card">
             <h3>🏦 Loan Prediction (ML)</h3>
-            <p>Built ML model using Logistic Regression with full data cleaning pipeline.</p>
-            <a href="https://streamlit.app" target="_blank" style="color: var(--primary); font-weight:600; text-decoration:none;">View Live Demo →</a>
+
+            <p>
+                Built a machine learning model using Logistic Regression with 
+                preprocessing and prediction pipeline integration.
+            </p>
+
+            <div class="project-links">
+                <a href="https://streamlit.app" target="_blank">
+                    🚀 Live Demo
+                </a>
+            </div>
+
             <img src="project3.png" alt="ML Project">
         </div>
 
@@ -165,16 +251,43 @@
 
 <div class="section">
     <h2>Technical Arsenal</h2>
+
     <div class="skills">
-        <span>Python</span><span>Django</span><span>ServiceNow</span><span>Machine Learning</span><span>SQL</span><span>MongoDB</span><span>JavaScript</span>
+        <span>Python</span>
+        <span>Django</span>
+        <span>Flask</span>
+        <span>ServiceNow</span>
+        <span>REST APIs</span>
+        <span>SQL</span>
+        <span>MongoDB</span>
+        <span>JavaScript</span>
+        <span>Machine Learning</span>
     </div>
 </div>
 
 <div class="section">
     <h2>Get In Touch</h2>
-    <p>📧 Email: <a href="mailto:gnithyashri25@gmail.com" style="color:var(--primary)">gnithyashri25@gmail.com</a></p>
-    <p>🔗 GitHub: <a href="https://github.com" target="_blank" style="color:var(--primary)">://github.com</a></p>
-    <p>💼 LinkedIn: <a href="https://linkedin.com" target="_blank" style="color:var(--primary)">://linkedin.com</a></p>
+
+    <p>
+        📧 Email:
+        <a href="mailto:gnithyashri25@gmail.com" style="color:var(--primary)">
+            gnithyashri25@gmail.com
+        </a>
+    </p>
+
+    <p>
+        🔗 GitHub:
+        <a href="https://github.com/gnithya-shri" target="_blank" style="color:var(--primary)">
+            github.com/gnithya-shri
+        </a>
+    </p>
+
+    <p>
+        💼 LinkedIn:
+        <a href="https://linkedin.com" target="_blank" style="color:var(--primary)">
+            Add Your LinkedIn URL
+        </a>
+    </p>
 </div>
 
 <footer>
