@@ -50,8 +50,4 @@ Machine Learning project using Logistic Regression with data preprocessing and p
 
 ## 📸 Portfolio Preview
 
-> Add screenshots here after uploading images to your repository.
-
-Example:
-```md
-![Portfolio Screenshot](screenshot.png)
+!(screenshot.png)
