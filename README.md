@@ -50,4 +50,4 @@ Machine Learning project using Logistic Regression with data preprocessing and p
 
 ## 📸 Portfolio Preview
 
-!(screenshot.png)
+<img src="screenshot.png" width="100%" alt="Portfolio Preview">
