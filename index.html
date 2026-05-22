@@ -6,19 +6,19 @@
   <title>G Nithya Shri | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --cyan: #22d3ee;
-      --blue: #6366f1;
-      --pink: #f472b6;
-      --bg: #05070f;
+      --cyan: #34d399;
+      --blue: #60a5fa;
+      --pink: #f9a8d4;
+      --bg: #0d1117;
       --surface: rgba(255,255,255,0.03);
-      --border: rgba(255,255,255,0.07);
-      --text: #f1f5f9;
-      --muted: #64748b;
-      --card-glow: rgba(34,211,238,0.06);
+      --border: rgba(255,255,255,0.08);
+      --text: #e2e8f0;
+      --muted: #6b7280;
+      --card-glow: rgba(52,211,153,0.06);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,8 +26,11 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Outfit', sans-serif;
       background: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(52,211,153,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(96,165,250,0.05) 0%, transparent 50%);
       color: var(--text);
       overflow-x: hidden;
       line-height: 1.65;
@@ -53,13 +56,13 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 48px;
-      background: rgba(5,7,15,0.7);
+      background: rgba(13,17,23,0.75);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-logo {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 800;
       font-size: 1.1rem;
       background: linear-gradient(90deg, var(--cyan), var(--blue));
@@ -104,7 +107,7 @@
       position: absolute;
       width: 700px; height: 700px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(34,211,238,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(52,211,153,0.07) 0%, transparent 70%);
       top: -100px; right: -200px;
       pointer-events: none;
     }
@@ -121,7 +124,7 @@
     }
 
     .hero-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: clamp(3.5rem, 9vw, 7rem);
       font-weight: 800;
       line-height: 0.95;
@@ -205,7 +208,7 @@
       gap: 8px;
       transition: all 0.25s ease;
       cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Outfit', sans-serif;
     }
 
     .btn-primary {
@@ -284,10 +287,10 @@
     }
 
     .section-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 800;
-      letter-spacing: -1.5px;
+      font-weight: 700;
+      letter-spacing: -1px;
       color: #fff;
       margin-bottom: 56px;
       line-height: 1.1;
@@ -410,7 +413,7 @@
     }
 
     .project-number {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 0.75rem;
       color: var(--cyan);
       font-weight: 700;
@@ -419,12 +422,12 @@
     }
 
     .project-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 1.3rem;
       font-weight: 700;
       color: #fff;
       margin-bottom: 12px;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
     }
 
     .project-desc {
@@ -519,7 +522,7 @@
     }
 
     .skill-group-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -586,10 +589,10 @@
     }
 
     .contact-card h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
       margin-bottom: 12px;
     }
 
@@ -964,7 +967,7 @@
 
 <!-- FOOTER -->
 <footer>
-  Designed &amp; built by <span>G Nithya Shri</span> · 2026
+  Designed &amp; built by <span>G Nithya Shri</span> · 2025
 </footer>
 
 </body>
