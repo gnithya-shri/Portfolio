@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G Nithya Shri | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -100,10 +100,17 @@
             letter-spacing: -0.5px;
         }
 
+        /* Enforce structured grid alignment symmetry */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -138,16 +145,24 @@
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .card img { 
+        /* Explicitly force structural container sizing limits */
+        .image-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
             border-radius: 10px; 
             margin-top: 20px; 
-            width: 100%; 
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
+            overflow: hidden;
             border: 1px solid rgba(255,255,255,0.08); 
+        }
+
+        .image-container img { 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
             display: block;
         }
 
@@ -262,10 +277,12 @@
             </div>
             <div>
                 <div class="project-links">
-                    <a href="https://github.com/gnithya-shri/job-tracker-ai" target="_blank">🔗 GitHub</a>
-                    <a href="https://lighthearted-trifle-4f2a93.netlify.app/" target="_blank">🚀 Live Demo</a>
+                    <a href="https://github.com" target="_blank">🔗 GitHub</a>
+                    <a href="https://netlify.app" target="_blank">🚀 Live Demo</a>
                 </div>
-                <img src="jobtracker.png" alt="Job Tracker AI">
+                <div class="image-container">
+                    <img src="jobtracker.png" alt="Job Tracker AI">
+                </div>
             </div>
         </div>
 
@@ -273,13 +290,16 @@
         <div class="card">
             <div class="card-content">
                 <h3>🎟 Movie Ticket Booking</h3>
-                <p>Solved concurrency handling challenges using Django framework architectures. Successfully managed simultaneous booking requests with backend transaction safety concepts.</p>
+                <p>Solved concurrency handling challenges using Django framework architectures.</p>
+                <p>Successfully managed simultaneous booking requests with backend transaction safety concepts to prevent duplicate bookings.</p>
             </div>
             <div>
                 <div class="project-links">
                     <a href="#" target="_blank">🔗 GitHub</a>
                 </div>
-                <img src="project1.png" alt="Ticket System">
+                <div class="image-container">
+                    <img src="project1.png" alt="Ticket System">
+                </div>
             </div>
         </div>
 
@@ -287,13 +307,16 @@
         <div class="card">
             <div class="card-content">
                 <h3>👨‍💼 ServiceNow Automation</h3>
-                <p>Automated standard cross-department employee onboarding workflows utilizing the ServiceNow ecosystem, reducing manual task delegation effort and improving platform speed efficiency.</p>
+                <p>Automated standard cross-department employee onboarding workflows utilizing the ServiceNow ecosystem.</p>
+                <p>Reduces manual task delegation effort and significantly improves platform processing speed efficiencies.</p>
             </div>
             <div>
                 <div class="project-links">
                     <a href="#" target="_blank">🔗 Custom Workflow</a>
                 </div>
-                <img src="project2.png" alt="ServiceNow Automation">
+                <div class="image-container">
+                    <img src="project2.png" alt="ServiceNow Automation">
+                </div>
             </div>
         </div>
 
@@ -301,13 +324,16 @@
         <div class="card">
             <div class="card-content">
                 <h3>🏦 Loan Prediction (ML)</h3>
-                <p>Built a machine learning pipeline model using Logistic Regression with data cleaning preprocessing steps and production pipeline setup integrations.</p>
+                <p>Built a machine learning pipeline model using Logistic Regression with data cleaning steps.</p>
+                <p>Features preprocessing pipelines, handling structured inputs, and production pipeline deployment setup integrations.</p>
             </div>
             <div>
                 <div class="project-links">
                     <a href="https://streamlit.app" target="_blank">🚀 Live Demo</a>
                 </div>
-                <img src="project3.png" alt="ML Project">
+                <div class="image-container">
+                    <img src="project3.png" alt="ML Project">
+                </div>
             </div>
         </div>
 
@@ -333,7 +359,7 @@
     <h2>Get In Touch</h2>
     <div class="contact-container">
         <p style="margin-top:0;">📧 Email: <a href="mailto:gnithyashri25@gmail.com" class="contact-link">gnithyashri25@gmail.com</a></p>
-        <p>🔗 GitHub: <a href="https://github.com/gnithya-shri" target="_blank" class="contact-link">github.com/gnithya-shri</a></p>
+        <p>🔗 GitHub: <a href="https://github.com" target="_blank" class="contact-link">://github.com</a></p>
         <p style="margin-bottom:0;">💼 LinkedIn: <a href="https://linkedin.com" target="_blank" class="contact-link">Add Your LinkedIn URL</a></p>
     </div>
 </div>
