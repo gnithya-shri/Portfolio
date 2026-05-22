@@ -2,6 +2,8 @@
 
 A modern and responsive personal portfolio website built using HTML and CSS to showcase my projects, technical skills, certifications, and contact information.
 
+**🔗 Live Website:** [gnithya-shri.github.io/Portfolio/](https://gnithya-shri.github.io/Portfolio/)
+
 ## 🚀 About the Portfolio
 
 This portfolio highlights:
@@ -26,12 +28,11 @@ The website is designed with a clean UI, responsive layout, animated sections, a
 
 ## ✨ Features
 
-- Responsive modern design
-- Smooth animations and hover effects
-- Featured project showcase section
-- Downloadable resume integration
-- Skills and certifications display
-- Contact section with GitHub and LinkedIn links
+- **Live Deployment:** Hosted on GitHub Pages for instant viewing.
+- **Responsive Design:** Modern UI that adapts smoothly to all screen sizes.
+- **Visual Appeal:** Smooth animations, hover effects, and glassmorphism-inspired cards.
+- **Project Showcase:** Highlights key backend, automation, and machine learning projects.
+- **Quick Access:** Direct links to a downloadable resume, GitHub, and LinkedIn.
 
 ---
 
