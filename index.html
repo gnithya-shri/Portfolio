@@ -33,6 +33,7 @@
       line-height: 1.65;
     }
 
+    /* ── NOISE OVERLAY ── */
     body::before {
       content: '';
       position: fixed;
@@ -43,6 +44,7 @@
       opacity: 0.5;
     }
 
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -85,6 +87,7 @@
 
     .nav-links a:hover { color: var(--cyan); }
 
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -95,6 +98,7 @@
       position: relative;
     }
 
+    /* Ambient blobs */
     #hero::after {
       content: '';
       position: absolute;
@@ -233,6 +237,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ── SCROLL INDICATOR ── */
     .scroll-hint {
       position: absolute;
       bottom: 36px;
@@ -256,7 +261,11 @@
       50%      { transform: translateX(-50%) translateY(6px); }
     }
 
-    section { position: relative; z-index: 1; }
+    /* ── SECTIONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
 
     .container {
       max-width: 1160px;
@@ -284,11 +293,20 @@
       line-height: 1.1;
     }
 
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
     .about-text {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 40px;
+      grid-column: 1 / -1;
     }
 
     .about-text p {
@@ -319,12 +337,14 @@
       text-transform: uppercase;
     }
 
+    /* ── DIVIDER ── */
     .divider {
       width: 100%;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
     }
 
+    /* ── PROJECTS ── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -359,6 +379,16 @@
       border-color: rgba(34,211,238,0.25);
       transform: translateY(-6px);
       box-shadow: 0 24px 48px -12px rgba(0,0,0,0.6);
+    }
+
+    .project-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      border-bottom: 1px solid var(--border);
+      background: #0f172a;
     }
 
     .project-img-placeholder {
@@ -466,6 +496,7 @@
       transform: translateY(-2px);
     }
 
+    /* ── SKILLS ── */
     #skills { background: rgba(255,255,255,0.01); }
 
     .skills-categories {
@@ -530,6 +561,7 @@
       background: rgba(34,211,238,0.05);
     }
 
+    /* ── CONTACT ── */
     .contact-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -629,6 +661,7 @@
       background: rgba(34,211,238,0.05);
     }
 
+    /* ── FOOTER ── */
     footer {
       text-align: center;
       padding: 36px 24px;
@@ -640,6 +673,7 @@
 
     footer span { color: var(--cyan); }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
       .nav-links { gap: 20px; }
@@ -652,11 +686,13 @@
 
     @media (max-width: 600px) {
       .nav-links { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">GNS</a>
   <ul class="nav-links">
@@ -667,6 +703,7 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <p class="hero-label">Portfolio — 2025</p>
   <h1 class="hero-name">
@@ -696,12 +733,14 @@
       GitHub
     </a>
   </div>
+
   <div class="scroll-hint">
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
     Scroll
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <span class="section-tag">01 — About</span>
@@ -723,18 +762,23 @@
 
 <div class="divider"></div>
 
+<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <span class="section-tag">02 — Projects</span>
     <h2 class="section-title">Featured Work</h2>
+
     <div class="projects-grid">
 
+      <!-- Job Tracker AI -->
       <div class="project-card">
-        <div class="project-img-placeholder">🤖</div>
+        <img src="jobtracker.png" alt="Job Tracker AI" class="project-img" />
         <div class="project-body">
           <p class="project-number">Project 01</p>
           <h3 class="project-title">Job Tracker AI</h3>
-          <p class="project-desc">An AI-powered job application tracker that helps candidates organize, monitor, and optimize their job search pipeline. Features intelligent insights and a clean, intuitive interface.</p>
+          <p class="project-desc">
+            An AI-powered job application tracker that helps candidates organize, monitor, and optimize their job search pipeline. Features intelligent insights and a clean, intuitive interface.
+          </p>
           <div class="project-tags">
             <span class="tag">AI/ML</span>
             <span class="tag">Full-Stack</span>
@@ -753,12 +797,15 @@
         </div>
       </div>
 
+      <!-- Movie Ticket Booking -->
       <div class="project-card">
-        <div class="project-img-placeholder">🎬</div>
+        <img src="project1.png" alt="Online Movie Ticket Booking" class="project-img" />
         <div class="project-body">
           <p class="project-number">Project 02</p>
           <h3 class="project-title">Online Movie Ticket Booking</h3>
-          <p class="project-desc">A full-featured online movie ticket booking system with real-time seat locking to prevent double bookings. Handles concurrent user sessions and ensures seamless reservation experiences.</p>
+          <p class="project-desc">
+            A full-featured online movie ticket booking system with real-time seat locking to prevent double bookings. Handles concurrent user sessions and ensures seamless reservation experiences.
+          </p>
           <div class="project-tags">
             <span class="tag">Full-Stack</span>
             <span class="tag">Real-Time</span>
@@ -773,12 +820,15 @@
         </div>
       </div>
 
+      <!-- Employee Onboarding -->
       <div class="project-card">
-        <div class="project-img-placeholder">⚙️</div>
+        <img src="project2.png" alt="Employee Onboarding Automation" class="project-img" />
         <div class="project-body">
           <p class="project-number">Project 03</p>
           <h3 class="project-title">Employee Onboarding Automation</h3>
-          <p class="project-desc">A ServiceNow-based automation solution that streamlines the employee onboarding lifecycle — from account provisioning to task assignment — reducing manual effort and onboarding time significantly.</p>
+          <p class="project-desc">
+            A ServiceNow-based automation solution that streamlines the employee onboarding lifecycle — from account provisioning to task assignment — reducing manual effort and onboarding time significantly.
+          </p>
           <div class="project-tags">
             <span class="tag">ServiceNow</span>
             <span class="tag">Automation</span>
@@ -793,12 +843,15 @@
         </div>
       </div>
 
+      <!-- Loan Eligibility -->
       <div class="project-card">
-        <div class="project-img-placeholder">📊</div>
+        <img src="project3.png" alt="Loan Eligibility Prediction" class="project-img" />
         <div class="project-body">
           <p class="project-number">Project 04</p>
           <h3 class="project-title">Loan Eligibility Prediction</h3>
-          <p class="project-desc">A machine learning model that predicts loan eligibility based on applicant data. Deployed as an interactive Streamlit web app for real-time predictions with a clean, user-friendly interface.</p>
+          <p class="project-desc">
+            A machine learning model that predicts loan eligibility based on applicant data. Deployed as an interactive Streamlit web app for real-time predictions with a clean, user-friendly interface.
+          </p>
           <div class="project-tags">
             <span class="tag">Machine Learning</span>
             <span class="tag">Python</span>
@@ -823,10 +876,12 @@
 
 <div class="divider"></div>
 
+<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <span class="section-tag">03 — Skills</span>
     <h2 class="section-title">Technical Stack</h2>
+
     <div class="skills-categories">
       <div class="skill-group">
         <p class="skill-group-title">Enterprise</p>
@@ -864,23 +919,31 @@
 
 <div class="divider"></div>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <span class="section-tag">04 — Contact</span>
     <h2 class="section-title">Get In Touch</h2>
+
     <div class="contact-card">
       <h3>Let's Work Together</h3>
       <p>Open to full-time roles, collaborations, and interesting projects.</p>
+
       <div class="contact-links">
         <div class="contact-row">
           <span class="contact-label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/g-nithya-shri-226760232" target="_blank" class="contact-value">g-nithya-shri-226760232</a>
+          <a href="https://www.linkedin.com/in/g-nithya-shri-226760232" target="_blank" class="contact-value">
+            g-nithya-shri-226760232
+          </a>
         </div>
         <div class="contact-row">
           <span class="contact-label">GitHub</span>
-          <a href="https://github.com/gnithya-shri" target="_blank" class="contact-value">github.com/gnithya-shri</a>
+          <a href="https://github.com/gnithya-shri" target="_blank" class="contact-value">
+            github.com/gnithya-shri
+          </a>
         </div>
       </div>
+
       <div class="social-btns">
         <a href="https://www.linkedin.com/in/g-nithya-shri-226760232" target="_blank" class="social-btn">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -899,8 +962,9 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  Designed &amp; built by <span>G Nithya Shri</span> · 2025
+  Designed &amp; built by <span>G Nithya Shri</span> · 2026
 </footer>
 
 </body>
