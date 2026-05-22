@@ -13,7 +13,7 @@
             --primary: #06b6d4;
             --secondary: #3b82f6;
             --bg: #020617;
-            --card-bg: rgba(30, 41, 59, 0.4);
+            --card-bg: rgba(15, 23, 42, 0.55);
             --text: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -28,134 +28,175 @@
             margin: 0;
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 70%);
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 100% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 100%, #1e293b 0%, #020617 80%);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         header {
-            height: 85vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            animation: fadeInUp 0.8s ease-out;
+            padding: 24px;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         header h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin: 0 0 10px 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            font-size: clamp(2.8rem, 9vw, 5rem);
+            margin: 0 0 16px 0;
+            background: linear-gradient(135deg, #22d3ee, #3b82f6, #818cf8);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
             letter-spacing: -2px;
+            animation: textGradient 6s linear infinite;
         }
 
-        .cta-container { display: flex; gap: 15px; margin-top: 30px; }
+        @keyframes textGradient {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
+        }
+
+        .cta-container { display: flex; gap: 16px; margin-top: 32px; }
 
         .btn {
-            padding: 12px 25px;
-            border-radius: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
             font-weight: 600;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.95rem;
+            cursor: pointer;
         }
 
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: none; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4); }
 
         .btn-outline { 
             background: transparent; 
-            color: var(--primary); 
-            border: 2px solid var(--primary); 
+            color: #fff; 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
         }
 
         .btn-outline:hover { 
-            background: rgba(6, 182, 212, 0.1); 
-            transform: translateY(-2px); 
+            background: rgba(255, 255, 255, 0.05); 
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px); 
         }
 
         .section { 
-            padding: 80px 20px; 
+            padding: 90px 24px; 
             max-width: 1200px; 
             margin: auto; 
             animation: fadeInUp 1s ease-out; 
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             border-left: 5px solid var(--primary);
-            padding-left: 15px;
-            margin-bottom: 40px;
+            padding-left: 16px;
+            margin-bottom: 45px;
             letter-spacing: -0.5px;
+            font-weight: 700;
         }
 
-        /* Enforce structured grid alignment symmetry */
+        .about-box {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .cert-badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 32px;
         }
 
-        @media (max-width: 768px) {
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 850px) {
+            .project-grid { grid-template-columns: 1fr; }
         }
 
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 32px;
+            border-radius: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
-            box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 35px -15px rgba(0,0,0,0.6);
         }
 
         .card:hover { 
-            border-color: rgba(6, 182, 212, 0.4); 
-            transform: translateY(-5px); 
-            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.15);
+            border-color: rgba(6, 182, 212, 0.35); 
+            transform: translateY(-6px); 
+            box-shadow: 0 25px 50px -15px rgba(6, 182, 212, 0.2);
         }
 
-        .card-content {
-            flex-grow: 1;
-        }
+        .card-content { flex-grow: 1; }
 
         .card h3 {
             margin-top: 0;
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             color: #fff;
+            font-weight: 700;
         }
 
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
-        /* Explicitly force structural container sizing limits */
         .image-container {
             width: 100%;
             aspect-ratio: 16 / 9;
-            border-radius: 10px; 
-            margin-top: 20px; 
+            border-radius: 12px; 
+            margin-top: 24px; 
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.08); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
         .image-container img { 
@@ -169,12 +210,12 @@
         .project-links {
             display: flex;
             gap: 12px;
-            margin-top: 15px;
+            margin-top: 16px;
             flex-wrap: wrap;
         }
 
         .project-links a {
-            padding: 6px 14px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             text-decoration: none;
@@ -182,15 +223,16 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             color: #cbd5e1;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .project-links a:hover {
-            background: rgba(6, 182, 212, 0.15);
+            background: rgba(6, 182, 212, 0.12);
             color: var(--primary);
             border-color: var(--primary);
+            transform: translateY(-1px);
         }
 
         .skills-grid {
@@ -200,38 +242,54 @@
         }
 
         .skills-grid span {
-            background: rgba(6, 182, 212, 0.06);
-            color: #94a3b8;
-            padding: 10px 20px;
+            background: rgba(30, 41, 59, 0.4);
+            color: #cbd5e1;
+            padding: 12px 24px;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
-            border: 1px solid rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .skills-grid span:hover {
             color: var(--primary);
-            border-color: var(--primary);
-            background: rgba(6, 182, 212, 0.12);
+            border-color: rgba(6, 182, 212, 0.3);
+            background: rgba(6, 182, 212, 0.08);
+            transform: translateY(-2px);
         }
 
         .contact-container {
-            background: rgba(30, 41, 59, 0.2);
-            border: 1px solid rgba(255,255,255,0.03);
-            border-radius: 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
             padding: 40px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
         }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 16px 0;
+            font-size: 1.05rem;
+        }
+        .contact-row:first-child { margin-top: 0; }
+        .contact-row:last-child { margin-bottom: 0; }
+
+        .contact-label { color: var(--text-muted); min-width: 90px; font-weight: 500; }
 
         .contact-link {
             color: var(--primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            word-break: break-all;
         }
         .contact-link:hover { text-decoration: underline; color: var(--secondary); }
 
         footer { 
             text-align: center; 
-            padding: 40px; 
+            padding: 50px 24px; 
             color: #475569; 
             font-size: 0.9rem;
             border-top: 1px solid rgba(255,255,255,0.03); 
@@ -243,12 +301,12 @@
 
 <header>
     <h1>G Nithya Shri</h1>
-    <p style="color: var(--text-muted); font-size: 1.3rem; margin: 0;">
-        ServiceNow Certified | Python & Backend Enthusiast
+    <p style="color: #cbd5e1; font-size: 1.4rem; margin: 0; font-weight: 500; letter-spacing: -0.2px;">
+        ServiceNow Certified (CAD & CSA) | Full-Stack Developer
     </p>
     
     <div class="cta-container">
-        <a href="#projects" class="btn btn-primary">Explore Projects</a>
+        <a href="#projects" class="btn btn-primary">Explore My Work</a>
         <a href="Resume.pdf" target="_blank" download="Nithya_Shri_Resume" class="btn btn-outline">
             📥 Download CV
         </a>
@@ -257,10 +315,19 @@
 
 <div class="section" id="about">
     <h2>About Me</h2>
-    <p style="font-size: 1.15rem; color: #cbd5e1; margin: 0; max-width: 800px;">
-        I am a ServiceNow-certified fresher passionate about backend development, workflow automation, and building practical software solutions. 
-        I enjoy creating scalable applications, automating workflows, and solving real-world problems through technology.
-    </p>
+    <div class="about-box">
+        <p style="font-size: 1.2rem; color: #f1f5f9; margin: 0 0 20px 0; font-weight: 400; line-height: 1.7;">
+            I am a focused **B.Tech graduate** and dual-certified **ServiceNow Application Developer (CAD)** and **System Administrator (CSA)**. 
+            Specializing in robust enterprise automation alongside modern full-stack web architectures, I design reliable workflows and scalable digital solutions.
+        </p>
+        <p style="font-size: 1.1rem; color: var(--text-muted); margin: 0; line-height: 1.7;">
+            My technical focus bridges backend development and intelligence pipelines, creating end-to-end applications with secure data frameworks and clean frontends.
+        </p>
+        <div class="cert-badges">
+            <span class="cert-badge">🛡️ ServiceNow CAD Certified</span>
+            <span class="cert-badge">⚙️ ServiceNow CSA Certified</span>
+        </div>
+    </div>
 </div>
 
 <div class="section" id="projects">
@@ -290,12 +357,12 @@
         <div class="card">
             <div class="card-content">
                 <h3>🎟 Movie Ticket Booking</h3>
-                <p>Solved concurrency handling challenges using Django framework architectures.</p>
-                <p>Successfully managed simultaneous booking requests with backend transaction safety concepts to prevent duplicate bookings.</p>
+                <p>Solved complex concurrency handling challenges using Django framework architectures.</p>
+                <p>Successfully managed simultaneous booking requests with backend transaction safety concepts to prevent duplicate allocations.</p>
             </div>
             <div>
                 <div class="project-links">
-                    <a href="#" target="_blank">🔗 GitHub</a>
+                    <a href="https://github.com" target="_blank">🔗 GitHub</a>
                 </div>
                 <div class="image-container">
                     <img src="project1.png" alt="Ticket System">
@@ -307,12 +374,12 @@
         <div class="card">
             <div class="card-content">
                 <h3>👨‍💼 ServiceNow Automation</h3>
-                <p>Automated standard cross-department employee onboarding workflows utilizing the ServiceNow ecosystem.</p>
+                <p>Automated standard cross-department employee onboarding workflows utilizing the enterprise ServiceNow ecosystem.</p>
                 <p>Reduces manual task delegation effort and significantly improves platform processing speed efficiencies.</p>
             </div>
             <div>
                 <div class="project-links">
-                    <a href="#" target="_blank">🔗 Custom Workflow</a>
+                    <a href="https://github.com" target="_blank">🔗 Custom Workflow</a>
                 </div>
                 <div class="image-container">
                     <img src="project2.png" alt="ServiceNow Automation">
@@ -346,7 +413,7 @@
         <span>Python</span>
         <span>Django</span>
         <span>Flask</span>
-        <span>ServiceNow</span>
+        <span>ServiceNow (CAD/CSA)</span>
         <span>REST APIs</span>
         <span>SQL</span>
         <span>MongoDB</span>
@@ -358,9 +425,18 @@
 <div class="section">
     <h2>Get In Touch</h2>
     <div class="contact-container">
-        <p style="margin-top:0;">📧 Email: <a href="mailto:gnithyashri25@gmail.com" class="contact-link">gnithyashri25@gmail.com</a></p>
-        <p>🔗 GitHub: <a href="https://github.com" target="_blank" class="contact-link">://github.com</a></p>
-        <p style="margin-bottom:0;">💼 LinkedIn: <a href="https://linkedin.com" target="_blank" class="contact-link">https://www.linkedin.com/in/g-nithya-shri-226760232/</a></p>
+        <div class="contact-row">
+            <span class="contact-label">📧 Email:</span>
+            <a href="mailto:gnithyashri25@gmail.com" class="contact-link">gnithyashri25@gmail.com</a>
+        </div>
+        <div class="contact-row">
+            <span class="contact-label">🔗 GitHub:</span>
+            <a href="https://github.com" target="_blank" class="contact-link">://github.com</a>
+        </div>
+        <div class="contact-row">
+            <span class="contact-label">💼 LinkedIn:</span>
+            <a href="https://linkedin.com" target="_blank" class="contact-link">://linkedin.com</a>
+        </div>
     </div>
 </div>
 
